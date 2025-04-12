@@ -27,5 +27,5 @@ public class SumaObjetivo {
         int[] numeros2 = {2, 4, 6};
         int objetivo2 = 11;
         System.out.println("¿Dos números suman " + objetivo2 + "? " + juego.sumaObjetivo(numeros2, objetivo2)); // Salida: Falso
-    }
+    } //La complejidad del Algoritmo: Es de O(n)
 }

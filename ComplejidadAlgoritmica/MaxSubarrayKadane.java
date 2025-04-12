@@ -31,5 +31,5 @@ public class MaxSubarrayKadane {
         int resultado = suma.sumMasGrande(numeros); //Llamada a la Función
         System.out.println("Suma máxima del subarreglo: " + resultado);//Salida : 6
         System.out.println("Numero de vultas: " + suma.contador); //Salida: 8
-    }
+    } //Complejidad del Algoritmo: Es de O(n).
 }

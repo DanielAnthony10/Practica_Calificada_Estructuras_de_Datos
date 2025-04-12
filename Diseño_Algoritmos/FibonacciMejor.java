@@ -18,7 +18,7 @@ public class FibonacciMejor {
 
     private Map<Integer, Integer> memo = new HashMap<>();
 
-    public int FibonacciMejor(int n) {
+    public int fibonacciMejor(int n) {
         if (n < 0) {
             throw new IllegalArgumentException("n debe ser mayor o igual a 0");
         }
@@ -30,7 +30,7 @@ public class FibonacciMejor {
             return memo.get(n);
         }
         // Si no, calcula y guarda
-        int resultado = FibonacciMejor(n - 1) + FibonacciMejor(n - 2);
+        int resultado = fibonacciMejor(n - 1) + fibonacciMejor(n - 2);
         memo.put(n, resultado);
         return resultado;
     }
@@ -40,6 +40,6 @@ public class FibonacciMejor {
 
         int n = 10;
         System.out.println("Recursivo simple para n=" + n + ": " + fib.fibonacciRecursivo(n));
-        System.out.println("Con memorización para n=" + n + ": " + fib.FibonacciMejor(n));
+        System.out.println("Con memorización para n=" + n + ": " + fib.fibonacciMejor(n));
     }
 }
