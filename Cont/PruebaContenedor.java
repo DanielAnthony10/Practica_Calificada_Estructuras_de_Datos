@@ -14,8 +14,8 @@ public class PruebaContenedor {
 
         // Contenedor de Productos
         Contenedor<Producto> contenedorProductos = new Contenedor<>();
-        contenedorProductos.agregar(new Producto("Lapicero"));
-        contenedorProductos.agregar(new Producto("Cuaderno"));
+        contenedorProductos.agregar(new Producto("Lapicero",5.50,20));
+        contenedorProductos.agregar(new Producto("Cuaderno",10.50,30));
 
         System.out.println("\nContenedor de Productos:");
         for (int i = 0; i < contenedorProductos.contar(); i++) {

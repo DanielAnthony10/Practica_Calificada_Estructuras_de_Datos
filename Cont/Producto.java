@@ -2,13 +2,20 @@ package Cont;
 
 public class Producto {
     private String nombre;
-    private float costo;
+    private double costo;
     private int cantidad;
 
+
+
+    public Producto(String nombre, double costo, int cantidad){
+        this.nombre = nombre;
+        this.costo = costo;
+        this.cantidad = cantidad;
+    }
     public Producto(String nombre) {
         this.nombre = nombre;
     }
-    public Producto(float costo){
+    public Producto(double costo){
         this.costo = costo;
     }
 
@@ -16,18 +23,11 @@ public class Producto {
         this.cantidad = cantidad;
     }
 
-    public Producto(String nombre, float costo, int cantidad){
-        this.nombre = nombre;
-        this.costo = costo;
-        this.cantidad = cantidad;
-    }
-
-
     public String getNombre() {
         return nombre;
     }
 
-    public float getCosto(){
+    public double getCosto(){
         return costo;
     }
 
@@ -37,6 +37,6 @@ public class Producto {
 
     @Override
     public String toString() {
-        return nombre + costo + cantidad;
+        return "Producto: " + nombre + " "+ "Costo: " + costo + " " + "Cantidad: " + cantidad;
     }
 }
