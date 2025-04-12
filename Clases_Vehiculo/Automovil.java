@@ -1,15 +1,16 @@
 package Clases_Vehiculo;
-
+//Clase Automovil que se extiende de la clase Vehiculo como la anterior
 public class Automovil extends Vehiculo {
-    private double kilometraje;
+    private double kilometraje; //los privates de la propia clase (Kilometraje y AireAcondicionado)
     private boolean tieneAireAcondicionado;
-
+//Constructor de la clase Automovil
     public Automovil(String marca, String modelo, int anio, double kilometraje, boolean tieneAireAcondicionado) {
-        super(marca, modelo, anio);
-        this.kilometraje = kilometraje;
-        this.tieneAireAcondicionado = tieneAireAcondicionado;
+        super(marca, modelo, anio); //Llama al contructor de la clase padre para su heredación
+        this.kilometraje = kilometraje; //Define sus atributos propios de la clase
+        this.tieneAireAcondicionado = tieneAireAcondicionado; //Define este atributo
     }
 
+    // Se calcula en base al kilometraje y se suma un extra si tiene aire acondicionado.
     @Override
     public double calcularCostoMantenimiento() {
         double costo = kilometraje * 0.05;
@@ -18,6 +19,7 @@ public class Automovil extends Vehiculo {
         }
         return costo;
     }
+    //Gettes y Setters de la Clase Automovil
 
     public double getKilometraje() {
         return kilometraje;
