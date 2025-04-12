@@ -1,30 +1,35 @@
 package ComplejidadAlgoritmica;
 
 public class MaxSubarrayKadane {
-    
-    public int maxSubarraySum(int[] numeros) {
-        if (numeros == null || numeros.length == 0) {
-            throw new IllegalArgumentException("El arreglo no debe estar vacío");
+    int contador;
+
+    public int sumMasGrande(int[] numeros){
+        int sumaActual = numeros[0]; //Comienza en -2
+        int sumaMaxima = numeros[0]; //Comienza en -2 igual
+
+        for (int i = 1; i < numeros.length; i ++){
+            contador++; //Contdor de Vuletas
+            if (sumaActual + numeros[i] > numeros[i]){
+                sumaActual = sumaActual + numeros[i]; //sigue la suma actual
+            } else{
+                sumaActual = numeros[i]; //Sino se empieza desde este número
+            }
+            //La mejor actual
+            if (sumaActual > sumaMaxima){
+                sumaMaxima = sumaActual; //Acá se guarda la suma más grande
+            }
         }
-
-        int maxActual = numeros[0];  // Máxima suma hasta el momento
-        int maxGlobal = numeros[0];  // Máxima suma encontrada
-
-        for (int i = 1; i < numeros.length; i++) {
-            // Elegimos entre comenzar de nuevo o extender el subarreglo actual
-            maxActual = Math.max(numeros[i], maxActual + numeros[i]);
-            maxGlobal = Math.max(maxGlobal, maxActual);
-        }
-
-        return maxGlobal;
+        return sumaMaxima;
     }
-
-    // Método de prueba
+    
+    //Médoto Principal
     public static void main(String[] args) {
-        MaxSubarrayKadane solucion = new MaxSubarrayKadane();
 
-        int[] ejemplo = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
-        int resultado = solucion.maxSubarraySum(ejemplo);
-        System.out.println("Suma máxima del subarreglo: " + resultado); // Debe imprimir 6
+        MaxSubarrayKadane suma = new MaxSubarrayKadane();
+
+        int[] numeros = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+        int resultado = suma.sumMasGrande(numeros); //Llamada a la Función
+        System.out.println("Suma máxima del subarreglo: " + resultado);//Salida : 6
+        System.out.println("Numero de vultas: " + suma.contador); //Salida: 8
     }
 }
